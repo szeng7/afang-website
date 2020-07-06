@@ -4,5 +4,5 @@ Just a website that I made for a friend. Using primarily react and react-bootstr
 
 Things left to do:
 
-[ ] - Add focus programmatically to each of the tab pills
-[ ] - Add backend and photos
+-   [ ] Add focus programmatically to each of the tab pills
+-   [ ] Add backend and photos
