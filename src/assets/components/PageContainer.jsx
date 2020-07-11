@@ -5,7 +5,23 @@ import { Button, Container, Row, Col, Tab, Tabs, Nav } from "react-bootstrap";
 class PageContainer extends Component {
     constructor(props) {
         super(props);
-        this.state = {}; //connect with the tab list
+        this.state = {
+            isDesktop: false /* if on tablet/desktop, show desktop view, else show mobile */,
+        };
+        this.updatePredicate = this.updatePredicate.bind(this);
+    }
+
+    componentDidMount() {
+        this.updatePredicate();
+        window.addEventListener("resize", this.updatePredicate);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updatePredicate);
+    }
+
+    updatePredicate() {
+        this.setState({ isDesktop: window.innerWidth > 800 });
     }
 
     getLandingPage() {
@@ -176,97 +192,179 @@ class PageContainer extends Component {
         );
     }
 
-    //need to figure this out to programmatically put focus on items
-    //setFocus() {
-    //    window.document.getElementById("landing").focus();
-    //}
-
     render() {
-        //this.setFocus();
-        return (
-            <Container fluid className="page-container">
-                <Tab.Container
-                    defaultActiveKey="landing"
-                    className="list-inline"
-                >
-                    <Row className="page-container-row">
-                        <Col lg={{ span: 2, offset: 0 }}>
-                            <Nav
-                                variant="pills"
-                                className="flex-column side-bar"
-                            >
-                                <Nav.Item>
-                                    <Nav.Link
-                                        eventKey="landing"
-                                        className="landing"
-                                        id="landing"
-                                    >
-                                        Alan Fang
-                                    </Nav.Link>
-                                    <Nav.Link
-                                        eventKey="about"
-                                        className="about"
-                                    >
-                                        About
-                                    </Nav.Link>
-                                    <Nav.Link
-                                        eventKey="works"
-                                        className="works"
-                                    >
-                                        Works
-                                    </Nav.Link>
-                                    <Nav.Link
-                                        eventKey="contact"
-                                        className="contact"
-                                    >
-                                        Contact
-                                    </Nav.Link>
-                                </Nav.Item>
-                            </Nav>
-                        </Col>
-                        <Col lg={{ span: 10 }}>
-                            <Tab.Content>
-                                <Tab.Pane eventKey="landing">
-                                    {this.getLandingPage()}
-                                </Tab.Pane>
-                                <Tab.Pane eventKey="about">
-                                    {this.getAboutPage()}
-                                </Tab.Pane>
-                                <Tab.Pane eventKey="works">
-                                    {this.getWorksPage()}
-                                </Tab.Pane>
-                                <Tab.Pane eventKey="contact">
-                                    {this.getContactPage()}
-                                </Tab.Pane>
-                            </Tab.Content>
-                        </Col>
+        if (this.state.isDesktop) {
+            return (
+                <Container fluid className="page-container">
+                    <Tab.Container
+                        defaultActiveKey="landing"
+                        className="list-inline"
+                    >
+                        <Row className="page-container-row">
+                            <Col lg={{ span: 2, offset: 0 }}>
+                                <Nav
+                                    variant="pills"
+                                    className="flex-column side-bar"
+                                >
+                                    <Nav.Item>
+                                        <Nav.Link
+                                            eventKey="landing"
+                                            className="landing"
+                                            id="landing"
+                                        >
+                                            Alan Fang
+                                        </Nav.Link>
+                                        <Nav.Link
+                                            eventKey="about"
+                                            className="about"
+                                        >
+                                            About
+                                        </Nav.Link>
+                                        <Nav.Link
+                                            eventKey="works"
+                                            className="works"
+                                        >
+                                            Works
+                                        </Nav.Link>
+                                        <Nav.Link
+                                            eventKey="contact"
+                                            className="contact"
+                                        >
+                                            Contact
+                                        </Nav.Link>
+                                    </Nav.Item>
+                                </Nav>
+                            </Col>
+                            <Col lg={{ span: 10 }}>
+                                <Tab.Content>
+                                    <Tab.Pane eventKey="landing">
+                                        {this.getLandingPage()}
+                                    </Tab.Pane>
+                                    <Tab.Pane eventKey="about">
+                                        {this.getAboutPage()}
+                                    </Tab.Pane>
+                                    <Tab.Pane eventKey="works">
+                                        {this.getWorksPage()}
+                                    </Tab.Pane>
+                                    <Tab.Pane eventKey="contact">
+                                        {this.getContactPage()}
+                                    </Tab.Pane>
+                                </Tab.Content>
+                            </Col>
+                        </Row>
+                    </Tab.Container>
+                    <Row className="icon-row d-flex">
+                        <a href="#">
+                            <img
+                                className="contact-icon"
+                                src={require("../icons/instagram.png")}
+                                alt="instagram"
+                            />
+                        </a>
+                        <a href="#">
+                            <img
+                                className="contact-icon"
+                                src={require("../icons/twitter.png")}
+                                alt="twitter"
+                            />
+                        </a>
+                        <a href="#">
+                            <img
+                                className="contact-icon"
+                                src={require("../icons/linkedin.png")}
+                                alt="linkedin"
+                            />
+                        </a>
                     </Row>
-                </Tab.Container>
-                <Row className="icon-row d-flex">
-                    <a href="#">
-                        <img
-                            className="contact-icon"
-                            src={require("../icons/instagram.png")}
-                            alt="instagram"
-                        />
-                    </a>
-                    <a href="#">
-                        <img
-                            className="contact-icon"
-                            src={require("../icons/twitter.png")}
-                            alt="twitter"
-                        />
-                    </a>
-                    <a href="#">
-                        <img
-                            className="contact-icon"
-                            src={require("../icons/linkedin.png")}
-                            alt="linkedin"
-                        />
-                    </a>
-                </Row>
-            </Container>
-        );
+                </Container>
+            );
+        } else {
+            //return mobile
+            return (
+                <Container fluid className="page-container">
+                    <Tab.Container
+                        defaultActiveKey="landing"
+                        className="list-inline"
+                    >
+                        <Row className="page-container-row">
+                            <Col lg={{ span: 2, offset: 0 }}>
+                                <Nav
+                                    variant="pills"
+                                    className="flex-column side-bar"
+                                >
+                                    <Nav.Item>
+                                        <Nav.Link
+                                            eventKey="landing"
+                                            className="landing"
+                                            id="landing"
+                                        >
+                                            Alan Fang
+                                        </Nav.Link>
+                                        <Nav.Link
+                                            eventKey="about"
+                                            className="about"
+                                        >
+                                            About
+                                        </Nav.Link>
+                                        <Nav.Link
+                                            eventKey="works"
+                                            className="works"
+                                        >
+                                            Works
+                                        </Nav.Link>
+                                        <Nav.Link
+                                            eventKey="contact"
+                                            className="contact"
+                                        >
+                                            Contact
+                                        </Nav.Link>
+                                    </Nav.Item>
+                                </Nav>
+                            </Col>
+                            <Col lg={{ span: 10 }}>
+                                <Tab.Content>
+                                    <Tab.Pane eventKey="landing">
+                                        {this.getLandingPage()}
+                                    </Tab.Pane>
+                                    <Tab.Pane eventKey="about">
+                                        {this.getAboutPage()}
+                                    </Tab.Pane>
+                                    <Tab.Pane eventKey="works">
+                                        {this.getWorksPage()}
+                                    </Tab.Pane>
+                                    <Tab.Pane eventKey="contact">
+                                        {this.getContactPage()}
+                                    </Tab.Pane>
+                                </Tab.Content>
+                            </Col>
+                        </Row>
+                    </Tab.Container>
+                    <Row className="icon-row d-flex">
+                        <a href="#">
+                            <img
+                                className="contact-icon"
+                                src={require("../icons/instagram.png")}
+                                alt="instagram"
+                            />
+                        </a>
+                        <a href="#">
+                            <img
+                                className="contact-icon"
+                                src={require("../icons/twitter.png")}
+                                alt="twitter"
+                            />
+                        </a>
+                        <a href="#">
+                            <img
+                                className="contact-icon"
+                                src={require("../icons/linkedin.png")}
+                                alt="linkedin"
+                            />
+                        </a>
+                    </Row>
+                </Container>
+            );
+        }
     }
 }
 
