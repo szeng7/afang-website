@@ -90,6 +90,10 @@ body {
     .entry {
         padding-bottom: 10px;
     }
+    a:focus {
+        outline: none !important;
+        font-size: 18px !important;
+    }
 }
 
 .contact-wrapper {
@@ -116,6 +120,10 @@ body {
     }
     .bottom-text {
         padding-top: 20px;
+    }
+    a:focus {
+        outline: none !important;
+        font-size: 18px !important;
     }
 }
 

@@ -22,25 +22,34 @@ class PageContainer extends Component {
                     <Col lg={{ span: 4, offset: 1 }} className="my-auto">
                         <Container fluid className="landing-text-container">
                             <p className="text-center my-auto">
-                                Alan Fang was born in New York City and raised
-                                in north Jersey by Chinese immigrants. This May,
-                                he graduated (on Zoom) from
+                                Alan Fang is an up and coming writer and has
+                                received a poet fellowship from the{" "}
                                 <span className="highlight">
                                     {" "}
+                                    Martha's Vineyard Insitute of Creative
+                                    Writing
+                                </span>{" "}
+                                and a{" "}
+                                <span className="highlight">
+                                    {" "}
+                                    Woodrow Wilson Research Fellowship
+                                </span>
+                                . His work has appeared in{" "}
+                                <span className="highlight">
+                                    sidereal magazine{" "}
+                                </span>
+                                and{" "}
+                                <span className="highlight">
+                                    {" "}
+                                    Asian American Writer's Workshop
+                                </span>
+                                . He got a BA in Writing Seminars from{" "}
+                                <span className="highlight">
                                     Johns Hopkins University{" "}
                                 </span>{" "}
-                                with a BA in Writing Seminars and will attend
-                                <span className="highlight"> NYU</span>’s MFA
-                                program in the fall. His work has appeared in
-                                <span className="highlight">
-                                    {" "}
-                                    sidereal magazine
-                                </span>{" "}
-                                and the{" "}
-                                <span className="highlight">
-                                    Asian American Writer’s Workshop
-                                </span>
-                                .
+                                and currently attends{" "}
+                                <span className="highlight">NYU</span>'s
+                                Creative Writing Program.
                             </p>
                         </Container>
                     </Col>
@@ -58,28 +67,19 @@ class PageContainer extends Component {
                             <h4 className="text-header">Biography</h4>
                             <p className="my-auto">
                                 Alan Fang hails from the east side of Manhattan
-                                and is the child of Chinese immigrants. A high
-                                school obsession with{" "}
+                                and is the child of Chinese immigrants. A
+                                childhood dream of becoming a computer scientist
+                                was quickly derailed by a high school obsession
+                                with{" "}
                                 <span className="highlight">
                                     Allen Ginsberg
-                                </span>{" "}
-                                has somehow led to his concerted effort to make
-                                writing poetry into a profession. He currently
-                                lives in Baltimore where he studies Writing
-                                Seminars at the{" "}
-                                <span className="highlight">
-                                    {" "}
-                                    Johns Hopkins University
-                                </span>{" "}
-                                and has recently been offered a poet fellowship
-                                at the{" "}
-                                <span className="highlight">
-                                    {" "}
-                                    Martha’s Vineyard Institute of Creative
-                                    Writing
                                 </span>
-                                . He enjoys dancing, cooking Asian food, and
-                                reading manga.
+                                , leading to his concerted effort to make
+                                writing poetry into a profession. He currently
+                                lives in New York City, attending{" "}
+                                <span className="highlight">NYU</span>'s
+                                Creative Writing Program. He enjoys dancing,
+                                cooking Asian food, and reading manga.
                             </p>
                         </Container>
                     </Col>
@@ -103,16 +103,26 @@ class PageContainer extends Component {
                         <Container fluid className="works-text-container">
                             <h4 className="text-header">Publications</h4>
                             <p className="my-auto entry">
-                                <span className="highlight underline">
-                                    Queen Mother of the West 西王母
-                                </span>
+                                <a href="https://siderealmagazine.com/2019/05/15/queen-mother-of-the-west/">
+                                    <span className="highlight underline">
+                                        Queen Mother of the West 西王母
+                                    </span>
+                                </a>
                                 , sidereal magazine, May 2019
                             </p>
                             <p className="my-auto entry">
-                                <span className="highlight underline">
-                                    After Peace
-                                </span>
+                                <a href="https://aaww.org/after-peace/">
+                                    <span className="highlight underline">
+                                        After Peace
+                                    </span>
+                                </a>
                                 , Asian American Writers' Workshop, June 2020
+                            </p>
+                            <p className="my-auto entry">
+                                <span className="highlight underline">
+                                    follow the pen
+                                </span>
+                                , 2020 Emerging Poet Prize Finalist, July 2020
                             </p>
                         </Container>
                     </Col>
@@ -130,25 +140,34 @@ class PageContainer extends Component {
                             <h4 className="text-header">Contact</h4>
                             <p className="my-auto top-text">Follow me here:</p>
                             <p className="my-auto">
-                                <span className="highlight underline">
-                                    Instagram
-                                </span>
+                                <a href="https://www.instagram.com/alan_y_fang/">
+                                    <span className="highlight underline">
+                                        Instagram
+                                    </span>
+                                </a>
+                            </p>
+
+                            <p className="my-auto">
+                                <a href="https://twitter.com/fang_ym">
+                                    <span className="highlight underline">
+                                        Twitter
+                                    </span>
+                                </a>
                             </p>
                             <p className="my-auto">
-                                <span className="highlight underline">
-                                    Twitter
-                                </span>
-                            </p>
-                            <p className="my-auto">
-                                <span className="highlight underline">
-                                    Linkedin
-                                </span>
+                                <a href="https://www.linkedin.com/in/alanyenmingfang/">
+                                    <span className="highlight underline">
+                                        Linkedin
+                                    </span>
+                                </a>
                             </p>
                             <p className="my-auto bottom-text">
                                 Email me{" "}
-                                <span className="highlight underline">
-                                    here
-                                </span>
+                                <a href="mailto:afang151@gmail.com">
+                                    <span className="highlight underline">
+                                        here
+                                    </span>
+                                </a>
                             </p>
                         </Container>
                     </Col>
