@@ -254,21 +254,21 @@ class PageContainer extends Component {
                         </Row>
                     </Tab.Container>
                     <Row className="icon-row d-flex">
-                        <a href="#">
+                        <a href="https://www.instagram.com/alan_y_fang/">
                             <img
                                 className="contact-icon"
                                 src={require("../icons/instagram.png")}
                                 alt="instagram"
                             />
                         </a>
-                        <a href="#">
+                        <a href="https://twitter.com/fang_ym">
                             <img
                                 className="contact-icon"
                                 src={require("../icons/twitter.png")}
                                 alt="twitter"
                             />
                         </a>
-                        <a href="#">
+                        <a href="https://www.linkedin.com/in/alanyenmingfang/">
                             <img
                                 className="contact-icon"
                                 src={require("../icons/linkedin.png")}
