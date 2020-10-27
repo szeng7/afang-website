@@ -140,6 +140,18 @@ class PageContainer extends Component {
                                 </span>
                                 , 2020 Emerging Poet Prize Finalist, July 2020
                             </p>
+                            <p className="my-auto entry">
+                                <span className="highlight underline">
+                                    Last Boat Home
+                                </span>
+                                , The Offing, forthcoming
+                            </p>
+                            <p className="my-auto entry">
+                                <span className="highlight underline">
+                                    follow the pen, safe passage
+                                </span>
+                                , Blackbird, forthcoming
+                            </p>
                         </Container>
                     </Col>
                 </Row>
